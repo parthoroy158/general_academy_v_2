@@ -33,7 +33,7 @@ const Navbar = () => {
                                     <Link
                                         href={item.path}
                                         onClick={() => setActive(item.label)}
-                                        className={`relative text-[15px] cursor-pointer pb-1 transition-colors duration-200 ${active === item.label
+                                        className={`relative text-[15px] cursor-pointer pb-1 transition-colorsnpm i @vercel/analytics duration-200 ${active === item.label
                                             ? "text-black font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black"
                                             : "text-gray-700 hover:text-[#51A2FF]"
                                             }`}
@@ -48,16 +48,21 @@ const Navbar = () => {
 
                 {/* Right Section (Desktop) */}
                 <div className="navbar-end ml-auto hidden lg:flex">
-                    <a className="btn btn-md rounded-full border-none bg-[#51A2FF] text-white text-[15px] font-semibold hover:bg-[#3a8be8] transition-colors">
-                        যোগাযোগ <IoArrowForwardSharp />
-                    </a>
+
+                    <Link
+                        href="/contact"
+                        className="inline-flex items-center justify-center gap-2 self-start md:self-auto rounded-3xl px-5 py-2.5  bg-[#51A2FF]  text-[15px] font-semibold hover:bg-[#3a8be8] transition-colors"
+                        aria-label="যোগাযোগ করুন"
+                    >
+                        যোগাযোগ  <IoArrowForwardSharp className="text-lg" />
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <div className="lg:hidden ml-auto">
                     <button
                         onClick={() => setMenuOpen(true)}
-                        className="btn btn-ghost p-2"
+                        className="btn btn-ghost p-2 text-black"
                         aria-label="Open Menu"
                     >
                         <svg
@@ -103,7 +108,7 @@ const Navbar = () => {
                                 setActive(item.label);
                                 setMenuOpen(false);
                             }}
-                            className={`relative cursor-pointer text-xl pb-1 transition-colors duration-500 ${active === item.label
+                            className={`relative cursor-pointer text-sm pb-1 transition-colors duration-500 ${active === item.label
                                 ? "text-black font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black"
                                 : "text-[#525353] hover:text-[#3a8be8]"
                                 }`}
@@ -111,12 +116,13 @@ const Navbar = () => {
                             {item.label}
                         </Link>
                     ))}
-                    <a
-                        onClick={() => setMenuOpen(false)}
-                        className="btn btn-md rounded-full bg-[#51A2FF] text-white hover:bg-[#3a8be8] text-lg px-8"
+                    <Link
+                        href="/contact"
+                        className="inline-flex items-center justify-center gap-2 self-start md:self-auto rounded-3xl px-5 py-2.5  bg-[#51A2FF]  text-[15px] font-semibold hover:bg-[#3a8be8] transition-colors"
+                        aria-label="যোগাযোগ করুন"
                     >
-                        যোগাযোগ <IoArrowForwardSharp />
-                    </a>
+                        যোগাযোগ  <IoArrowForwardSharp className="text-lg" />
+                    </Link>
                 </div>
 
                 {/* Transparent Left Overlay */}
